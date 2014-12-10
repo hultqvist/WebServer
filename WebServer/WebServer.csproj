@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0721760F-C1FD-44FB-A959-8D08DC1BC1F2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SilentOrbit</RootNamespace>
+    <AssemblyName>WebServer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ReleaseVersion>500</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>True</DebugSymbols>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>True</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="mscorlib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Connection\ChunkedInput.cs" />
+    <Compile Include="Connection\ChunkedOutput.cs" />
+    <Compile Include="Debug.cs" />
+    <Compile Include="WebServer\HttpSession.cs" />
+    <Compile Include="WebServer\HeaderException.cs" />
+    <Compile Include="WebServer\Listener.cs" />
+    <Compile Include="WebServer\HttpSessionManager.cs" />
+    <Compile Include="Parsers\PostParser.cs" />
+    <Compile Include="Parsers\HttpHeaderParser.cs" />
+    <Compile Include="HttpResponses\ExceptionResponse.cs" />
+    <Compile Include="HttpResponses\NullResponse.cs" />
+    <Compile Include="HttpResponses\Response.cs" />
+    <Compile Include="HttpResponses\ResponseHeader.cs" />
+    <Compile Include="HttpResponses\RedirectResponse.cs" />
+    <Compile Include="Parsers\BodyWriter.cs" />
+    <Compile Include="Parsers\BodyWriterJson.cs" />
+    <Compile Include="Parsers\BodyWriterPost.cs" />
+    <Compile Include="Parsers\SocketParser.cs" />
+    <Compile Include="Parsers\MultipartHeaderParser.cs" />
+    <Compile Include="WebSockets\UpgradeResponse.cs" />
+    <Compile Include="WebSockets\Opcode.cs" />
+    <Compile Include="WebSockets\WebSocket.cs" />
+    <Compile Include="WebSockets\CloseReason.cs" />
+    <Compile Include="HttpRequests\HttpMethod.cs" />
+    <Compile Include="HttpRequests\HttpRequest.cs" />
+    <Compile Include="HttpRequests\KeyValueStorage.cs" />
+    <Compile Include="WebServer\WebStream.cs" />
+    <Compile Include="HttpResponses\NotFoundResponse.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="WebServer\" />
+    <Folder Include="Parsers\" />
+    <Folder Include="HttpResponses\" />
+    <Folder Include="WebSockets\" />
+    <Folder Include="HttpRequests\" />
+  </ItemGroup>
+</Project>
