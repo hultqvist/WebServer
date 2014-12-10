@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleServer", "ExampleServer.csproj", "{0F6C01AE-251B-4AD1-A81C-9230607DA4A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServer", "..\WebServer\WebServer.csproj", "{0721760F-C1FD-44FB-A959-8D08DC1BC1F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0721760F-C1FD-44FB-A959-8D08DC1BC1F2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0721760F-C1FD-44FB-A959-8D08DC1BC1F2}.Debug|x86.Build.0 = Debug|Any CPU
+		{0721760F-C1FD-44FB-A959-8D08DC1BC1F2}.Release|x86.ActiveCfg = Release|Any CPU
+		{0721760F-C1FD-44FB-A959-8D08DC1BC1F2}.Release|x86.Build.0 = Release|Any CPU
+		{0F6C01AE-251B-4AD1-A81C-9230607DA4A1}.Debug|x86.ActiveCfg = Debug|x86
+		{0F6C01AE-251B-4AD1-A81C-9230607DA4A1}.Debug|x86.Build.0 = Debug|x86
+		{0F6C01AE-251B-4AD1-A81C-9230607DA4A1}.Release|x86.ActiveCfg = Release|x86
+		{0F6C01AE-251B-4AD1-A81C-9230607DA4A1}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = ExampleServer.csproj
+	EndGlobalSection
+EndGlobal

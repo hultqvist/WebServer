@@ -3,14 +3,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{0721760F-C1FD-44FB-A959-8D08DC1BC1F2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>SilentOrbit</RootNamespace>
     <AssemblyName>WebServer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ReleaseVersion>500</ReleaseVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -64,6 +64,10 @@
     <Compile Include="HttpRequests\KeyValueStorage.cs" />
     <Compile Include="WebServer\WebStream.cs" />
     <Compile Include="HttpResponses\NotFoundResponse.cs" />
+    <Compile Include="HttpResponses\PlainTextResponse.cs" />
+    <Compile Include="HttpResponses\HeadResponse.cs" />
+    <Compile Include="HttpResponses\FileNotFoundResponse.cs" />
+    <Compile Include="HttpResponses\BadRequestResponse.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
