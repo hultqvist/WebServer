@@ -7,14 +7,14 @@ using System.Threading;
 
 namespace SilentOrbit
 {
-	public static class Extensions
-	{
-		public static void NullSafeDispose (this IDisposable dis)
-		{
-			if (dis == null)
-				return;
-			
-			dis.Dispose ();
-		}
-	}
+    public static class Extensions
+    {
+        public static void NullSafeDispose(this IDisposable dis)
+        {
+            if (dis == null)
+                return;
+
+            dis.Dispose();
+        }
+    }
 }

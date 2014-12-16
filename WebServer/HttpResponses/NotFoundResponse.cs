@@ -5,20 +5,20 @@ using System.Text;
 
 namespace SilentOrbit.HttpResponses
 {
-	public class NotFoundResponse : Response
-	{
-		public NotFoundResponse()
-		{
-			Header.StatusCode = HttpStatusCode.NotFound;
-			Header.ContentType = "text/plain";
-		}
+    public class NotFoundResponse : Response
+    {
+        public NotFoundResponse()
+        {
+            Header.StatusCode = HttpStatusCode.NotFound;
+            Header.ContentType = "text/plain";
+        }
 
-		static byte[] notfound = Encoding.ASCII.GetBytes("Not Found");
+        static byte[] notfound = Encoding.ASCII.GetBytes("Not Found");
 
-		public override byte[] GetBodyBytes()
-		{
-			return notfound;
-		}
-	}
+        public override byte[] GetBodyBytes()
+        {
+            return notfound;
+        }
+    }
 }
 

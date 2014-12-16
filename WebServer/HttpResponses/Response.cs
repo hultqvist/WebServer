@@ -8,30 +8,30 @@ using System.Collections.Generic;
 
 namespace SilentOrbit.HttpResponses
 {
-	public abstract class Response
-	{
-		public readonly ResponseHeader Header = new ResponseHeader();
+    public abstract class Response
+    {
+        public readonly ResponseHeader Header = new ResponseHeader();
 
-		//TODO: chunked and async delivery
-		public abstract byte[] GetBodyBytes();
+        //TODO: chunked and async delivery
+        public abstract byte[] GetBodyBytes();
 
-		#region Helpers
+        #region Helpers
 
-		public static string Escape(string text)
-		{
-			return HttpUtility.HtmlEncode(text);
-		}
-        
-		public static string EscapeUrl(string text)
-		{
-			return HttpUtility.UrlEncode(text);
-		}
-        
-		#endregion
+        public static string Escape(string text)
+        {
+            return HttpUtility.HtmlEncode(text);
+        }
 
-		public override string ToString()
-		{
-			return Header.ToString();
-		}
-	}
+        public static string EscapeUrl(string text)
+        {
+            return HttpUtility.UrlEncode(text);
+        }
+
+        #endregion
+
+        public override string ToString()
+        {
+            return Header.ToString();
+        }
+    }
 }

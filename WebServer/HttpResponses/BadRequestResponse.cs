@@ -6,20 +6,21 @@ namespace SilentOrbit.HttpResponses
 {
     public class BadRequestResponse : Response
     {
-		public string Content { get; set; }
+        public string Content { get; set; }
 
         public BadRequestResponse()
         {
-			Content = "No";
+            Content = "No";
             Header.StatusCode = System.Net.HttpStatusCode.BadRequest;
-            Header.ContentType = "text/plain"; 
+            Header.ContentType = "text/plain";
         }
 
-		public BadRequestResponse(string content) : this()
-		{
-			this.Content = content;
-			this.Header.CloseAfterResponse();
-		}
+        public BadRequestResponse(string content)
+            : this()
+        {
+            this.Content = content;
+            this.Header.CloseAfterResponse();
+        }
 
         public override byte[] GetBodyBytes()
         {

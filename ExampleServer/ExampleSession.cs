@@ -5,16 +5,16 @@ using SilentOrbit.HttpRequests;
 
 namespace ExampleServer
 {
-	public class ExampleSession : HttpSession
-	{
-		protected override Response GotRequest (HttpRequest request)
-		{
-			if (request.Url == "/")
-				return new PlainTextResponse ("Hello");
-			else
-				return new NotFoundResponse ();
-		}
+    public class ExampleSession : HttpSession
+    {
+        protected override Response GotRequest(HttpRequest request)
+        {
+            if (request.Url == "/")
+                return new PlainTextResponse("Hello");
+            else
+                return new NotFoundResponse();
+        }
 
-	}
+    }
 }
 
