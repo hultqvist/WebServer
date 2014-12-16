@@ -2,6 +2,7 @@ using System;
 using System.Net;
 using System.Text;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace SilentOrbit.HttpResponses
 {
@@ -88,7 +89,7 @@ namespace SilentOrbit.HttpResponses
             foreach (Cookie c in Cookies)
             {
                 sb.Append("Set-Cookie: " + c.Name + "=" + System.Web.HttpUtility.UrlEncode(c.Value));
-                sb.Append("; expires=" + c.Expires.ToUniversalTime().ToString("ddd',' dd MMM yyyy HH':'mm':'ss 'GMT'"));
+                sb.Append("; expires=" + c.Expires.ToUniversalTime().ToString("ddd',' dd MMM yyyy HH':'mm':'ss 'GMT'", CultureInfo.InvariantCulture));
                 if (!string.IsNullOrWhiteSpace(c.Domain))
                     sb.Append("; domain=" + c.Domain);
                 if (!string.IsNullOrWhiteSpace(c.Path))
