@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -39,6 +39,7 @@
     <Compile Include="Connection\ChunkedInput.cs" />
     <Compile Include="Connection\ChunkedOutput.cs" />
     <Compile Include="Debug.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="WebServer\HttpSession.cs" />
     <Compile Include="WebServer\HeaderException.cs" />
     <Compile Include="WebServer\Listener.cs" />
@@ -70,11 +71,5 @@
     <Compile Include="HttpResponses\BadRequestResponse.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Folder Include="WebServer\" />
-    <Folder Include="Parsers\" />
-    <Folder Include="HttpResponses\" />
-    <Folder Include="WebSockets\" />
-    <Folder Include="HttpRequests\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

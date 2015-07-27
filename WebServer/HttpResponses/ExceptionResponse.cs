@@ -33,7 +33,6 @@ namespace SilentOrbit.HttpResponses
 " + HtmlFormat(ex) + @"
 </body>
 </html>");
-            ;
         }
 
         string HtmlFormat(Exception e)

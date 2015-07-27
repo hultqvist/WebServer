@@ -74,9 +74,10 @@ namespace SilentOrbit.WebServer
                     }
                     if (response != null)
                     {
-                        if (response is WebSockets.UpgradeResponse)
+                        var upgrade = response as UpgradeResponse;
+                        if (upgrade != null)
                         {
-                            await SendUpgradeResponse(request, (UpgradeResponse)response);
+                            await SendUpgradeResponse(request, upgrade);
                             break;
                         }
 
@@ -252,14 +253,14 @@ namespace SilentOrbit.WebServer
                 stream.LingerState.Enabled = false;
                 stream.Close();
             }
-            catch (Exception)
+            catch
             {
             }
             try
             {
                 stream.Close();
             }
-            catch (Exception)
+            catch
             {
             }
         }

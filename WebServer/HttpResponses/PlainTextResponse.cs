@@ -6,7 +6,7 @@ namespace SilentOrbit.HttpResponses
 {
     public class PlainTextResponse : Response
     {
-        string text;
+        readonly string text;
 
         public PlainTextResponse(string text)
         {

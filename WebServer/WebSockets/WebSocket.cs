@@ -179,7 +179,7 @@ namespace SilentOrbit.WebSockets
                         return true; //Need more
 
                     //Next 8 bytes is length
-                    throw new NotImplementedException();
+                    throw new NotSupportedException();
                 }
 
                 int frameSize = header + length;
@@ -229,7 +229,7 @@ namespace SilentOrbit.WebSockets
                         return false;
 
                     case Opcode.Continuation:
-                        throw new NotImplementedException(op.ToString());
+                        throw new NotSupportedException(op.ToString());
 
                     case Opcode.Ping:
                         Close(CloseReason.ProtocolError, "Hey! ping is my thing");
@@ -315,7 +315,7 @@ namespace SilentOrbit.WebSockets
             long length = Encoding.UTF8.GetByteCount(reason) + 2;
             byte[] sendBuffer;
             if (length >= 126 - 2) //
-                throw new NotImplementedException("Only implemented close reason messages up to 124 bytes");
+                throw new NotSupportedException("Only implemented close reason messages up to 124 bytes");
             sendBuffer = new byte[2 + 2 + length];
             sendBuffer[0] = finalFrame | (byte)Opcode.Close;
             sendBuffer[1] = (byte)length;

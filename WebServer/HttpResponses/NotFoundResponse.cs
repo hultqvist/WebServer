@@ -13,7 +13,7 @@ namespace SilentOrbit.HttpResponses
             Header.ContentType = "text/plain";
         }
 
-        static byte[] notfound = Encoding.ASCII.GetBytes("Not Found");
+        static readonly byte[] notfound = Encoding.ASCII.GetBytes("Not Found");
 
         public override byte[] GetBodyBytes()
         {

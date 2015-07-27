@@ -13,7 +13,7 @@ namespace SilentOrbit.Parsers
         public const string Mime = "application/json";
 
         MemoryStream stream;
-        HttpRequest request;
+        readonly HttpRequest request;
 
         public BodyWriterJson(HttpRequest request)
         {

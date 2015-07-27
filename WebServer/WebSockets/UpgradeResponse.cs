@@ -37,7 +37,7 @@ namespace SilentOrbit.WebSockets
 
             //Calculate accept key
             string tohash = request.SecWebSocketKey + "258EAFA5-E914-47DA-95CA-C5AB0DC85B11";
-            var sha = System.Security.Cryptography.SHA1Managed.Create();
+            var sha = System.Security.Cryptography.SHA1.Create();
             string accept = Convert.ToBase64String(sha.ComputeHash(Encoding.ASCII.GetBytes(tohash)));
 
             Header.ExtraHeaders.Add("Upgrade: websocket");

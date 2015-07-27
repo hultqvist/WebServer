@@ -55,12 +55,9 @@ namespace SilentOrbit.Parsers
                     case "content-type": //application/octet-stream
                         ContentType = val.ToLowerInvariant();
                         break;
-
-                    default:
 #if DEBUG
+                    default:
                         throw new NotImplementedException(key + ": " + val);
-#else
-						break;
 #endif
                 }
             }
@@ -71,7 +68,7 @@ namespace SilentOrbit.Parsers
             //form-data; name="file"; filename="Windows"
             var parts = value.Split(';');
             if (parts[0] != "form-data")
-                throw new NotImplementedException();
+                throw new NotSupportedException();
             for (int n = 1; n < parts.Length; n++)
             {
                 int eqPos = parts[n].IndexOf('=');
@@ -88,7 +85,7 @@ namespace SilentOrbit.Parsers
                         Filename = val.Trim(' ', '"');
                         break;
                     default:
-                        throw new NotImplementedException(key);
+                        throw new NotSupportedException(key);
                 }
             }
         }

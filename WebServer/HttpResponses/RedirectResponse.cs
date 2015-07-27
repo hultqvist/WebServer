@@ -17,7 +17,7 @@ namespace SilentOrbit.HttpResponses
             Header.Location = url;
         }
 
-        static byte[] none = new byte[0];
+        static readonly byte[] none = new byte[0];
 
         public override byte[] GetBodyBytes()
         {

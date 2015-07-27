@@ -51,7 +51,7 @@ namespace SilentOrbit.Parsers
                 if (h[n].Length == 0)
                     throw new InvalidDataException("Unexpected empty line inside headers");
                 if (h[n][0] == ' ' || h[n][0] == '\t')
-                    throw new NotImplementedException("Header folding");
+                    throw new NotSupportedException("Header folding");
                 int keysep = h[n].IndexOf(':');
                 if (keysep < 0)
                     continue;
@@ -91,7 +91,7 @@ namespace SilentOrbit.Parsers
                     {
                         req.ContentType = value.Substring(0, sep).ToLowerInvariant();
                         const string boundaryMarker = "boundary=";
-                        sep = value.IndexOf(boundaryMarker, sep);
+                        sep = value.IndexOf(boundaryMarker, sep, StringComparison.Ordinal);
                         if (sep > 0)
                             req.Boundary = value.Substring(sep + boundaryMarker.Length);
                     }

@@ -13,7 +13,7 @@ namespace SilentOrbit.Parsers
         public const string Mime = "application/x-www-form-urlencoded";
 
         MemoryStream stream;
-        HttpRequest request;
+        readonly HttpRequest request;
 
         public BodyWriterPost(HttpRequest request)
         {

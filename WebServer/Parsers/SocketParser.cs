@@ -51,7 +51,7 @@ namespace SilentOrbit.Parsers
                 if (next == -1)
                 {
                     if (bufferPointer == buffer.Length)
-                        throw new NotImplementedException("Too large header: max size currently is " + buffer.Length);
+                        throw new NotSupportedException("Too large header: max size currently is " + buffer.Length);
 
                     //Read more
                     //Console.WriteLine("ReadHeaders() FillBuffer()");
@@ -180,7 +180,7 @@ namespace SilentOrbit.Parsers
         public async Task ReadMultipartBody(HttpRequest request)
         {
             if (request.Boundary == null)
-                throw new NotImplementedException("Missing boundary: " + request.ContentType);
+                throw new Exception("Missing boundary: " + request.ContentType);
 
             //Console.WriteLine("Total Size: " + request.ContentLength);
             //Console.WriteLine("Multipart: " + request.Boundary);
