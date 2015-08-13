@@ -170,6 +170,7 @@ namespace SilentOrbit.Parsers
                 case "user-agent":
                     req.UserAgent = value;
                     break;
+                case "x-forwarded-for":
                 case "x-real-ip":
                     req.XRealIP = value;
                     break;
@@ -194,6 +195,9 @@ namespace SilentOrbit.Parsers
                 case "dnt": //do not track
                 case "access-control-request-method":
                 case "access-control-request-headers":
+                case "upgrade-insecure-requests":
+                case "x-forwarded-host":
+                case "x-forwarded-server":
                     break;
 #if DEBUG
                 default:
